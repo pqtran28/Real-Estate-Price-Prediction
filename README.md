@@ -8,11 +8,13 @@ Repository được tổ chức theo chuẩn dự án ML thực tế, dễ mở 
 
 ## 📂 Cấu trúc thư mục
 
+```plaintext
 ├── data/                      # Dữ liệu thô & dữ liệu đã xử lý
 ├── scraping-data/             # Code thu thập dữ liệu (scraping/crawling)
 ├── preprocessing-data/        # Làm sạch, transform, EDA
 ├── model/                     # Huấn luyện mô hình, đánh giá, lưu model
-└── gemini-api-calling/        # Gọi API Gemini / LLM phục vụ inference
+└── gemini-api-calling/        # Gọi API Gemini / LLM phục vụ trích xuất thông tin mô tả bất động sản
+```
 
 ### 📁 data/
 
