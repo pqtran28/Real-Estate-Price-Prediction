@@ -162,14 +162,14 @@ def call_llm_API(des,client,index: int,input_lim: int):
         )
         print(f'✅ Response generated. The program is still running, line {index}')
     except errors.APIError as e:
-        logger.error(f'❌ An error occurs. Error code: {e.code}, {e.status}, line {index}')
+        logger.error(f'An error occurs. Error code: {e.code}, {e.status}, line {index}')
         logger.warning('Response will be None.')
         logger.info('The program is still running.')
         if (e.code == 429):
             time.sleep(20)
         MISS_LINE.append((e.code,index))
     except Exception as e:
-        logger.error(f'❌ An unknown error occurs: {e}, line {index}')
+        logger.error(f'An unknown error occurs: {e}, line {index}')
         MISS_LINE.append(('unknown',index))
     return response
 
