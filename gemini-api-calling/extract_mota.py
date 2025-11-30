@@ -43,10 +43,10 @@ def connect_to_database(config: dict):
         )
         engine = create_engine(connection_url)
         with engine.connect() as _:
-            print("✅ Connected.")
+            print("Connected.")
         return engine
     except Exception as e:
-        print("❌ Failed.", e)
+        print("Failed.", e)
         return None
 
 def load_data(connection):
@@ -56,10 +56,10 @@ def load_data(connection):
             con=connection
         )
         if data.empty:
-            print("❌ Load data failed.")
+            print("Load data failed.")
             return None
         else:
-            print("✅ Load data successfully.")
+            print("Load data successfully.")
             return data
 
 class DescriptionInfo(BaseModel):
@@ -160,7 +160,7 @@ def call_llm_API(des,client,index: int,input_lim: int):
                 temperature= 0.2
             )
         )
-        print(f'✅ Response generated. The program is still running, line {index}')
+        print(f'Response generated. The program is still running, line {index}')
     except errors.APIError as e:
         logger.error(f'An error occurs. Error code: {e.code}, {e.status}, line {index}')
         logger.warning('Response will be None.')
